@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+    --color-*: initial;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-brand: #232645;
+    --color-blue: #4c52f6;
+    --color-gray: #6e7078
+}
+
+html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+
+}
+
+html, body {
+    height: 100%;
+    @apply print:bg-white not-print:bg-gray/5
+}
+
+p {
+    margin: 0;
+}
+
+a:link {
+    text-decoration: none;
+}
