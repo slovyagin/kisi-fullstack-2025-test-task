@@ -1,8 +1,7 @@
 import {memo, use, useMemo} from "react";
-import {Heatmap as HeatmapType} from "../../types.ts";
+import {Heatmap as HeatmapType} from "../types.ts";
 
 const LOCATION_NAME = 'Kisi Stockholm Office'
-
 const fetchHeatmap = fetch('/api/heatmap/unlock')
   .then<HeatmapType>(res => {
     if (!res.ok) {
@@ -68,7 +67,6 @@ export function Heatmap() {
         <a
           href='/export-pdf'
           className="border-1 border-blue rounded py-2 px-8 appearance-none hover:bg-blue/20 text-lg text-blue"
-          type="button"
         >
           Export
         </a>

@@ -3,7 +3,7 @@ import {Collection, MongoClient, ServerApiVersion} from 'mongodb'
 import express from 'express'
 import {chromium} from 'playwright'
 import viteExpress from "vite-express";
-import {type TrackedEvent} from "../../types.ts";
+import {type TrackedEvent} from "../types.ts";
 import {pipeline} from "./pipeline.ts";
 // Load environment vars from .env file
 import 'dotenv/config'
@@ -18,7 +18,7 @@ uri.password = process.env.MONGO_PASSWORD as string;
 uri.searchParams.set('appName', process.env.MONGO_APP_NAME as string);
 
 /**
- * Create MongoDB client with server API configuration
+ * Create MongoDB client
  */
 const client = new MongoClient(uri.toString(), {
   serverApi: {
@@ -58,7 +58,7 @@ async function run() {
     });
 
     /**
-     * Creates PDF from the print layout of the current document
+     * Creates PDF from the print layout of the heatmap
      */
     app.get('/export-pdf', async (req, res) => {
       try {
