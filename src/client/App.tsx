@@ -10,7 +10,7 @@ function App() {
       <Header/>
       <div className="flex-1 flex flex-row">
         <Sidebar/>
-        <main className="px-10 flex-1 text-xs py-20 overflow-x-auto">
+        <main className="px-10 flex-1 text-xs py-20 not-print:overflow-x-auto">
           <ErrorBoundary FallbackComponent={HeatmapErrorFallback}>
             <div className="m-auto w-fit grid gap-8">
               <Suspense fallback={<div className="text-base">Loading heatmap...</div>}>
